@@ -38,90 +38,70 @@
 
     /* ── HEADER ── */
     header {
-      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      border-bottom: 2px solid #cce6f4;
       padding: 22px 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 28px;
     }
-    .logo-area {
+    .logo-img {
+      height: 80px;
+      width: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+    .header-text {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 6px;
     }
-    .logo-name {
-      font-size: 1.35rem;
+    .header-title {
+      font-size: 1.9rem;
       font-weight: 900;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      background: linear-gradient(to right, #ffffff 0%, #00a6d9 55%, #1383ae 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .logo-sub {
-      font-size: 0.55rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--dim);
-    }
-    .header-badge {
-      font-size: 0.5rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--cyan);
-      border: 1px solid var(--border2);
-      padding: 4px 12px;
-      border-radius: 99px;
-    }
-
-    /* ── HERO ── */
-    .hero {
-      text-align: center;
-      padding: 64px 40px 48px;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .hero-title {
-      font-size: clamp(1.6rem, 4vw, 2.6rem);
-      font-weight: 900;
+      color: #0a2f52;
       line-height: 1.15;
       letter-spacing: -0.01em;
-      margin-bottom: 18px;
     }
-    .hero-title span {
-      background: linear-gradient(to right, #ffffff 0%, #00a6d9 60%, #1383ae 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-desc {
-      font-size: 0.82rem;
-      color: var(--dim);
-      line-height: 1.8;
-      max-width: 520px;
-      margin: 0 auto;
+    .header-tagline {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1383ae;
+      letter-spacing: 0.01em;
     }
 
-    /* ── SECTION OUTILS ── */
-    .section {
-      max-width: 980px;
+    /* ── LAYOUT 2 COLONNES ── */
+    .page-body {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 40px 80px;
+      padding: 40px 40px 80px;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 48px;
+      align-items: start;
     }
+
+    /* ── TITRE AU-DESSUS DES OUTILS ── */
+    .tools-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin-bottom: 28px;
+    }
+
+    /* ── COLONNE DROITE : outils ── */
+    .col-tools {}
     .section-label {
-      font-size: 0.52rem;
+      font-size: 1rem;
       font-weight: 800;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--cyan);
       margin-bottom: 22px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
     .section-label::after {
       content: '';
@@ -129,6 +109,74 @@
       height: 1px;
       background: var(--border);
     }
+
+    /* ── COLONNE DROITE : présentation ── */
+    .col-about {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 26px;
+      position: sticky;
+      top: 20px;
+    }
+    .about-section {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .about-h {
+      font-size: 0.75rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+    .about-p {
+      font-size: 0.72rem;
+      color: rgba(184,232,248,0.75);
+      line-height: 1.75;
+      margin-bottom: 8px;
+    }
+    .about-p:last-child { margin-bottom: 0; }
+    .about-list {
+      list-style: none;
+      margin-top: 6px;
+    }
+    .about-list li {
+      font-size: 0.7rem;
+      color: rgba(184,232,248,0.75);
+      line-height: 1.75;
+      padding-left: 14px;
+      position: relative;
+    }
+    .about-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+    .btn-tipeee {
+      display: block;
+      margin-top: 16px;
+      background: #f5a623;
+      color: #000;
+      font-weight: 900;
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 11px 0;
+      border-radius: 8px;
+      text-align: center;
+      transition: background 0.12s;
+    }
+    .btn-tipeee:hover { background: #ffc55a; }
 
     /* ── CARTE OUTIL ── */
     .tool-card {
@@ -164,16 +212,15 @@
     }
 
     .tool-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #1c1134, #200034);
-      border: 1px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
+    }
+    .tool-icon img {
+      width: 110px;
+      height: auto;
+      display: block;
+      border-radius: 10px;
     }
 
     .tool-info {
@@ -234,13 +281,17 @@
     /* Bouton d'accès */
     .tool-card-action {
       flex-shrink: 0;
-      padding: 24px 22px;
+      padding: 20px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 10px;
       border-left: 1px solid var(--border);
+      min-width: 110px;
+    }
+    .tool-card-action .tool-icon {
+      margin-bottom: 6px;
     }
     .btn-access {
       display: block;
@@ -332,10 +383,14 @@
     .flink-tipeee { color: #f5a623; }
     .flink-tipeee:hover { color: #ffc55a; }
 
+    @media (max-width: 860px) {
+      .page-body { grid-template-columns: 1fr; padding: 28px 20px 60px; gap: 32px; }
+      .col-about { position: static; }
+    }
     @media (max-width: 640px) {
-      header { padding: 16px 20px; }
-      .hero { padding: 40px 20px 32px; }
-      .section { padding: 0 20px 60px; }
+      header { padding: 16px 20px; flex-wrap: wrap; }
+      .logo-img { height: 56px; }
+      .header-title { font-size: 1.3rem; }
       .tool-card-body { flex-direction: column; align-items: flex-start; gap: 16px; }
       .tool-card-action { border-left: none; border-top: 1px solid var(--border); padding: 16px 24px; flex-direction: row; width: 100%; }
       footer { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
@@ -345,88 +400,99 @@
 <body>
 
   <header>
-    <div class="logo-area">
-      <div class="logo-name">XiPiNOCODE</div>
-      <div class="logo-sub">Outils pour la vie privée numérique</div>
+    <img class="logo-img" src="logo.png" alt="XiPiNOCODE">
+    <div class="header-text">
+      <div class="header-title">Des outils simples et intuitifs qui respectent la vie privée</div>
+      <div class="header-tagline">Gratuit et anonyme</div>
     </div>
-    <div class="header-badge">Gratuit & 100 % local</div>
   </header>
 
-  <div class="hero">
-    <h1 class="hero-title">Des outils pour <span>protéger votre vie privée</span></h1>
-    <p class="hero-desc">
-      XiPiNOCODE conçoit des applications simples et gratuites qui traitent vos données <strong style="color:#fff;">uniquement sur votre appareil</strong>. Aucune donnée envoyée sur internet. Aucun compte requis.
-    </p>
+  <div class="page-body">
+
+    <!-- ── COLONNE GAUCHE : présentation ── -->
+    <aside class="col-about">
+
+      <div class="about-section">
+        <div class="about-h">Qui suis-je ?</div>
+        <p class="about-p">Je suis <strong style="color:#fff;">Bruno Molinari</strong>, créateur indépendant sous le nom <strong style="color:#fff;">XiPiNOCODE</strong>. Ma mission : concevoir des outils numériques gratuits, ergonomiques et intuitifs, accessibles à tous, sans compromis sur la vie privée.</p>
+        <p class="about-p">Chaque application doit être facile à prendre en main dès la première utilisation, utile au quotidien, et respectueuse de vos données. Pas de publicité, pas de collecte, pas d'abonnement.</p>
+      </div>
+
+      <div class="about-section">
+        <div class="about-h">Pourquoi Tipeee ?</div>
+        <p class="about-p">Développer des outils gratuits et respectueux de la vie privée prend du temps. Tipeee me permet de continuer ce travail de façon totalement indépendante, sans jamais trahir les valeurs de XiPiNOCODE.</p>
+        <p class="about-p">En soutenant le projet, vous permettez le développement de la suite — et vous recevez en contrepartie le lien de téléchargement de <strong style="color:#fff;">Face-Efface Photo</strong> (Windows).</p>
+        <a class="btn-tipeee" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">💛 Soutenir sur Tipeee</a>
+      </div>
+
+      <div class="about-section">
+        <div class="about-h">Les objectifs</div>
+        <ul class="about-list">
+          <li>Face-Efface Vidéo — floutage automatique sur vidéo</li>
+          <li>D'autres outils de protection de la vie privée, toujours gratuits et locaux</li>
+          <li>Aucun abonnement, aucune collecte de données</li>
+        </ul>
+        <p class="about-p" style="margin-top:12px; font-style:italic; color:var(--cyan);">C'est la promesse XiPiNOCODE.</p>
+      </div>
+
+    </aside>
+
+    <!-- ── COLONNE DROITE : outils ── -->
+    <main class="col-tools">
+
+      <div class="tools-title">Nos applications</div>
+
+      <div class="section-label">Protection de l'identité visuelle</div>
+
+      <div class="tool-card">
+        <div class="tool-card-accent"></div>
+        <div class="tool-card-body">
+          <div class="tool-info">
+            <div class="tool-name">Face-Efface <span>·</span> Photo</div>
+            <div class="tool-type">Floutage de visages — photo</div>
+            <p class="tool-desc">
+              Protégez l'identité des personnes sur vos photos en floutant les visages directement dans votre navigateur.
+              Détection automatique par IA, sélection manuelle, ou les deux. Vos photos ne quittent jamais votre appareil.
+            </p>
+            <div class="tool-tags">
+              <span class="tag tag-free">Gratuit</span>
+              <span class="tag tag-local">100 % local</span>
+              <span class="tag">Web · Windows</span>
+              <span class="tag">Détection IA</span>
+            </div>
+          </div>
+        </div>
+        <div class="tool-card-action">
+          <div class="tool-icon"><img src="face-efface-square.png" alt="Face-Efface Photo"></div>
+          <a class="btn-access" href="https://xipinocode.github.io/face-efface-photo/" target="_blank" rel="noopener">▶ Ouvrir l'app</a>
+          <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">⬇ Version Windows</a>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:42px;">Bientôt disponible</div>
+
+      <div class="tool-card tool-card-soon">
+        <div class="tool-card-accent"></div>
+        <div class="tool-card-body">
+          <div class="tool-info">
+            <div class="tool-name">Face-Efface <span style="color:#7a90aa;">·</span> Vidéo</div>
+            <div class="tool-type">Floutage de visages — vidéo</div>
+            <p class="tool-desc">La même protection, appliquée image par image sur vos vidéos. Traitement local, sans envoi sur internet.</p>
+            <div class="tool-tags"><span class="badge-soon">En développement</span></div>
+          </div>
+        </div>
+        <div class="tool-card-action">
+          <div class="tool-icon" style="background:#1c1134;border:1px solid #3f4e67;font-size:1.6rem;">🎞️</div>
+          <span class="badge-soon">À venir</span>
+        </div>
+      </div>
+
+    </main>
+
   </div>
-
-  <main class="section">
-
-    <div class="section-label">Protection de l'identité visuelle</div>
-
-    <!-- OUTIL 1 : Face-Efface Photo -->
-    <div class="tool-card">
-      <div class="tool-card-accent"></div>
-      <div class="tool-card-body">
-        <div class="tool-icon">🫥</div>
-        <div class="tool-info">
-          <div class="tool-name">Face-Efface <span>·</span> Photo</div>
-          <div class="tool-type">Floutage de visages — photo</div>
-          <p class="tool-desc">
-            Protégez l'identité des personnes sur vos photos en floutant les visages directement dans votre navigateur.
-            Détection automatique par IA, sélection manuelle, ou les deux. Vos photos ne quittent jamais votre appareil.
-          </p>
-          <div class="tool-tags">
-            <span class="tag tag-free">Gratuit</span>
-            <span class="tag tag-local">100 % local</span>
-            <span class="tag">Web · Windows</span>
-            <span class="tag">Détection IA</span>
-          </div>
-        </div>
-      </div>
-      <div class="tool-card-action">
-        <a class="btn-access" href="https://xipinocode.github.io/face-efface-photo/" target="_blank" rel="noopener">
-          ▶ Ouvrir l'app
-        </a>
-        <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">
-          ⬇ Version Windows
-        </a>
-      </div>
-    </div>
-
-    <div class="section-label" style="margin-top:42px;">Bientôt disponible</div>
-
-    <!-- OUTIL 2 : Face-Efface Vidéo (à venir) -->
-    <div class="tool-card tool-card-soon">
-      <div class="tool-card-accent"></div>
-      <div class="tool-card-body">
-        <div class="tool-icon">🎞️</div>
-        <div class="tool-info">
-          <div class="tool-name">Face-Efface <span style="color:#7a90aa;">·</span> Vidéo</div>
-          <div class="tool-type">Floutage de visages — vidéo</div>
-          <p class="tool-desc">
-            La même protection, appliquée image par image sur vos vidéos. Traitement local, sans envoi sur internet.
-          </p>
-          <div class="tool-tags">
-            <span class="badge-soon">En développement</span>
-          </div>
-        </div>
-      </div>
-      <div class="tool-card-action">
-        <span class="badge-soon">À venir</span>
-      </div>
-    </div>
-
-  </main>
 
   <footer>
     <div class="footer-left">© Molinari Bruno / XiPiNOCODE — Tous droits réservés</div>
-    <div class="footer-right">
-      <a class="flink flink-tipeee" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">💛 Soutenir sur Tipeee</a>
-      <span class="fsep">·</span>
-      <a class="flink" href="https://github.com/xipinocode" target="_blank" rel="noopener">GitHub</a>
-      <span class="fsep">·</span>
-      <a class="flink" href="https://xipinocode.github.io/face-efface-photo/" target="_blank" rel="noopener">Face-Efface Photo</a>
-    </div>
   </footer>
 
 </body>
