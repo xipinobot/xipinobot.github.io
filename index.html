@@ -92,6 +92,36 @@
 
     /* ── COLONNE DROITE : outils ── */
     .col-tools {}
+
+    /* ── LAYOUT APP + MEDIA ── */
+    .app-media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .media-col {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .media-col video {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(0,166,217,0.25);
+      background: #0d0d18;
+    }
+    .media-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(184,232,248,0.45);
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .app-media-row { grid-template-columns: 1fr; }
+    }
     .section-label {
       font-size: 1rem;
       font-weight: 800;
@@ -444,30 +474,41 @@
 
       <div class="section-label">Protection de l'identité visuelle</div>
 
-      <div class="tool-card">
-        <div class="tool-card-accent"></div>
-        <div class="tool-card-body">
-          <div class="tool-info">
-            <div class="tool-name">Face-Efface <span>·</span> Photo</div>
-            <div class="tool-type">Floutage de visages — photo</div>
-            <p class="tool-desc">
-              Protégez l'identité des personnes sur vos photos en floutant les visages directement dans votre navigateur.
-              Détection automatique par IA, sélection manuelle, ou les deux. Vos photos ne quittent jamais votre appareil.
-            </p>
-            <div class="tool-tags">
-              <span class="tag tag-free">Gratuit</span>
-              <span class="tag tag-local">100 % local</span>
-              <span class="tag">Web · Windows · Linux</span>
-              <span class="tag">Détection IA</span>
+      <div class="app-media-row">
+
+        <div class="tool-card">
+          <div class="tool-card-accent"></div>
+          <div class="tool-card-body">
+            <div class="tool-info">
+              <div class="tool-name">Face-Efface <span>·</span> Photo</div>
+              <div class="tool-type">Floutage de visages — photo</div>
+              <p class="tool-desc">
+                Protégez l'identité des personnes sur vos photos en floutant les visages directement dans votre navigateur.
+                Détection automatique par IA, sélection manuelle, ou les deux. Vos photos ne quittent jamais votre appareil.
+              </p>
+              <div class="tool-tags">
+                <span class="tag tag-free">Gratuit</span>
+                <span class="tag tag-local">100 % local</span>
+                <span class="tag">Web · Windows · Linux</span>
+                <span class="tag">Détection IA</span>
+              </div>
             </div>
           </div>
+          <div class="tool-card-action">
+            <div class="tool-icon"><img src="face-efface-square.png" alt="Face-Efface Photo"></div>
+            <a class="btn-access" href="https://xipinobot.github.io/face-efface-photo/" target="_blank" rel="noopener">▶ Ouvrir l'app</a>
+            <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">⬇ Windows</a>
+            <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">⬇ Linux</a>
+          </div>
         </div>
-        <div class="tool-card-action">
-          <div class="tool-icon"><img src="face-efface-square.png" alt="Face-Efface Photo"></div>
-          <a class="btn-access" href="https://xipinobot.github.io/face-efface-photo/" target="_blank" rel="noopener">▶ Ouvrir l'app</a>
-          <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">⬇ Windows</a>
-          <a class="btn-download" href="https://fr.tipeee.com/xipinocode/" target="_blank" rel="noopener">⬇ Linux</a>
+
+        <div class="media-col">
+          <video controls preload="metadata">
+            <source src="promo-face-efface.mp4" type="video/mp4">
+          </video>
+          <div class="media-label">▶ Vidéo de présentation — Face-Efface Photo</div>
         </div>
+
       </div>
 
       <div class="section-label" style="margin-top:42px;">Bientôt disponible</div>
