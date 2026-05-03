@@ -73,7 +73,7 @@
     /* ── LAYOUT 2 COLONNES ── */
     .page-body {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: 0 0 0 0;
       padding: 40px 40px 80px;
       display: grid;
       grid-template-columns: 340px 1fr;
@@ -95,32 +95,17 @@
 
     /* ── LAYOUT APP + MEDIA ── */
     .app-media-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-      align-items: start;
-    }
-    .media-col {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      gap: 28px;
+      align-items: stretch;
     }
-    .media-col video {
-      width: 100%;
-      border-radius: 10px;
-      border: 1px solid rgba(0,166,217,0.25);
-      background: #0d0d18;
+    .app-media-row .tool-card {
+      flex: 0 0 auto;
     }
-    .media-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: rgba(184,232,248,0.45);
-      text-align: center;
-    }
-    @media (max-width: 900px) {
-      .app-media-row { grid-template-columns: 1fr; }
+    .app-media-row video {
+      flex: 1 1 auto;
+      min-width: 0;
     }
     .section-label {
       font-size: 1rem;
@@ -502,12 +487,9 @@
           </div>
         </div>
 
-        <div class="media-col">
-          <video controls preload="metadata">
-            <source src="promo-face-efface.mp4" type="video/mp4">
-          </video>
-          <div class="media-label">▶ Vidéo de présentation — Face-Efface Photo</div>
-        </div>
+        <video controls preload="metadata" style="width:100%;border-radius:10px;border:1px solid rgba(0,166,217,0.25);background:#0d0d18;align-self:center;">
+          <source src="promo-face-efface.mp4" type="video/mp4">
+        </video>
 
       </div>
 
